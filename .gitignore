@@ -3,6 +3,7 @@
 /test/
 custom-elements.json
 # top level source
+/dist
 my-element.js
 my-element.js.map
 my-element.d.ts
