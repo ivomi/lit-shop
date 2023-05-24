@@ -1,11 +1,11 @@
-import { LitElement, TemplateResult, html, nothing } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { LitElement, TemplateResult, html, nothing } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import '../shared/spinner.component';
 
 @customElement('app-root')
 export class AppComponent extends LitElement {
   @property()
-  protected user = { name: 'Ivo' };
+  user = { name: 'Ivo' };
 
   @property()
   isLoading = true;
@@ -29,15 +29,15 @@ export class AppComponent extends LitElement {
   }
 
   protected adminBlock(): TemplateResult {
-    return html`<app-admin></app-admin>`;
+    return html` <app-admin></app-admin>`;
   }
 
   protected override render(): TemplateResult {
     return html`
-    <app-spinner .isLoading=${this.isLoading}></app-spinner>
-    <h1>Hello ${this.user.name}</h1>
-    <button @click="${() => this.onLoad()}">Load</button>
-    ${this.adminLoaded ? this.adminBlock() : nothing}
-`;
+      <app-spinner .isLoading="${this.isLoading}"></app-spinner>
+      <h1>Hello ${this.user.name}</h1>
+      <button @click="${() => this.onLoad()}">Load</button>
+      ${this.adminLoaded ? this.adminBlock() : nothing}
+    `;
   }
 }

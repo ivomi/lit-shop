@@ -2,12 +2,14 @@
   "name": "lit-shop",
   "private": true,
   "description": "A simple web component",
-  "main": "src/app.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "build": "webpack --mode production",
-    "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --progress --open",
+    "build": "webpack --progress --mode production",
+    "check": "lit-analyzer src",
+    "lint": "eslint --quiet",
+    "lint-fix": "eslint --fix --quiet",
+    "format": "prettier --loglevel=warn --write src/"
   },
   "dependencies": {
     "lit": "^2.2.4"
@@ -20,6 +22,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
     "lit-analyzer": "^1.2.1",
+    "prettier": "^2.8.8",
     "sass-loader": "^13.3.0",
     "style-loader": "^3.3.3",
     "ts-lit-plugin": "^1.2.1",

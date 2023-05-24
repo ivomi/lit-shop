@@ -23,8 +23,7 @@
     "noImplicitOverride": true,
     "plugins": [
       {
-        "name": "ts-lit-plugin",
-        "strict": true
+        "name": "ts-lit-plugin"
       }
     ]
   },

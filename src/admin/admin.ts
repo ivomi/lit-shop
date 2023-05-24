@@ -1,3 +1,3 @@
-import { AdminComponent } from "./admin.component";
+import { AdminComponent } from './admin.component';
 
 export { AdminComponent };
