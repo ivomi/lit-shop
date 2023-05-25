@@ -1,43 +1,15 @@
-import { LitElement, TemplateResult, html, nothing } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import '../shared/spinner.component';
+import { AppComponentStyles } from '@app/app.component.styles';
+import { AppComponentView } from '@app/app.component.view';
+import { createRouter } from '@app/routes';
+import { LitElement, TemplateResult } from 'lit';
+import { customElement } from 'lit/decorators.js';
 
 @customElement('app-root')
 export class AppComponent extends LitElement {
-  @property()
-  user = { name: 'Ivo' };
-
-  @property()
-  isLoading = true;
-
-  @property()
-  adminLoaded = false;
-
-  constructor() {
-    super();
-    setTimeout(() => {
-      this.isLoading = false;
-      this.user.name = 'David';
-      console.log(AppComponent.elementProperties);
-    }, 1500);
-  }
-
-  protected async onLoad() {
-    if (this.adminLoaded) return;
-    await import('../admin/admin');
-    this.adminLoaded = true;
-  }
-
-  protected adminBlock(): TemplateResult {
-    return html` <app-admin></app-admin>`;
-  }
+  static override styles = AppComponentStyles;
+  public readonly router = createRouter(this);
 
   protected override render(): TemplateResult {
-    return html`
-      <app-spinner .isLoading="${this.isLoading}"></app-spinner>
-      <h1>Hello ${this.user.name}</h1>
-      <button @click="${() => this.onLoad()}">Load</button>
-      ${this.adminLoaded ? this.adminBlock() : nothing}
-    `;
+    return AppComponentView(this);
   }
 }

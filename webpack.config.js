@@ -2,6 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const tsconfig = require('./tsconfig.json');
+
+const pathAliases = {};
+Object.entries(tsconfig.compilerOptions.paths ?? {}).forEach(([key, item]) => {
+  pathAliases[key.slice(0, -2)] = path.resolve(__dirname, item[0].slice(0, -2));
+});
 
 module.exports = (env, argv) => ({
   mode: 'development',
@@ -76,6 +82,7 @@ module.exports = (env, argv) => ({
     ],
   },
   resolve: {
+    alias: pathAliases,
     extensions: ['.tsx', '.ts', '.js'],
   },
 });

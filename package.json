@@ -12,6 +12,7 @@
     "format": "prettier --loglevel=warn --write src/"
   },
   "dependencies": {
+    "@lit-labs/router": "^0.1.1",
     "lit": "^2.2.4"
   },
   "devDependencies": {
