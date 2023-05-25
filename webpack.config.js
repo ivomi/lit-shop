@@ -27,26 +27,23 @@ module.exports = (env, argv) => ({
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       context: 'node_modules/@webcomponents/webcomponentsjs',
-    //       from: '**/*.js',
-    //       to: 'webcomponents'
-    //     },
-    //     {
-    //       from: './src/assets/img/*',
-    //       to: './',
-    //     }
-    //   ]
-    // })
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'assets/**/*',
+          context: 'src',
+        }
+      ]
+    })
   ],
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   cache: {
     type: 'filesystem',
+    version: '1.0',
   },
   stats: {
     assets: false,

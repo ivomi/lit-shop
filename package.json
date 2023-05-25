@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --open",
     "build": "webpack --progress --mode production",
+    "serve": "serve dist --single",
     "check": "lit-analyzer src",
     "lint": "eslint --quiet",
     "lint-fix": "eslint --fix --quiet",
@@ -25,6 +26,7 @@
     "lit-analyzer": "^1.2.1",
     "prettier": "^2.8.8",
     "sass-loader": "^13.3.0",
+    "serve": "^14.2.0",
     "style-loader": "^3.3.3",
     "ts-lit-plugin": "^1.2.1",
     "ts-loader": "^9.4.3",
