@@ -17,9 +17,14 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
+    "skipLibCheck": true,
     "plugins": [
       {
-        "name": "ts-lit-plugin"
+        "name": "ts-lit-plugin",
+        "strict": true,
+        "rules": {
+          "no-missing-import": "error"
+        }
       }
     ],
     "paths": {

@@ -12,6 +12,7 @@ export const AppComponentStyles = css`
   }
   
   img {
+    margin: 15px auto;
     height: auto;
     width: 250px;
     max-width: 100%;

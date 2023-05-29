@@ -9,8 +9,9 @@ class LinkDirective extends Directive {
     element.onclick = (event: Event) => {
       event.preventDefault();
       event.stopPropagation();
-      getRouter().goto(path);
-      history.pushState(null, '', path);
+      getRouter()
+        .goto(path)
+        .then(() => history.pushState(null, '', path));
     };
     return this.render(path);
   }

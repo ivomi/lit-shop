@@ -21,7 +21,7 @@ export const createRouter = (component: LitElement) => {
       path: '/',
       render: () => html` <app-homepage></app-homepage>`,
       enter: async () => {
-        const component = await import('@app/components/homepage/homepage.component');
+        const component = await import('./components/homepage/homepage.component');
         return !!component.HomepageComponent;
       },
     },
@@ -29,7 +29,7 @@ export const createRouter = (component: LitElement) => {
       path: '/about',
       render: () => html` <app-about></app-about>`,
       enter: async () => {
-        const component = await import('@app/components/about/about.component');
+        const component = await import('./components/about/about.component');
         return !!component.AboutComponent;
       },
     },
@@ -37,7 +37,7 @@ export const createRouter = (component: LitElement) => {
       path: '/contact',
       render: () => html` <app-contact></app-contact>`,
       enter: async () => {
-        const component = await import('@app/components/contact/contact.component');
+        const component = await import('./components/contact/contact.component');
         return !!component.ContactComponent;
       },
     },

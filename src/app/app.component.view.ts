@@ -10,5 +10,5 @@ export const AppComponentView = (component: AppComponent) => html`
     <a ${link('/contact')}>Contact</a>
   </header>
   <main>${component.router.outlet()}</main>
-  <img src="/assets/images/logo.png" alt="logo" />
+  <img src="/assets/images/logo.svg" alt="logo" />
 `;
