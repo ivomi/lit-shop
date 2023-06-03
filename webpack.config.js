@@ -79,7 +79,10 @@ module.exports = (env, argv) => ({
     ],
   },
   resolve: {
-    alias: pathAliases,
+    alias: {
+      ...pathAliases,
+      'lit/decorators': 'lit/decorators.js',
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
 });

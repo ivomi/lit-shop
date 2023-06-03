@@ -3,3 +3,4 @@
 /dist
 # only generated for size check
 /.idea
+/.vscode
