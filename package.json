@@ -1,7 +1,6 @@
 {
-  "name": "lit-shop",
+  "name": "lit-starter",
   "private": true,
-  "description": "A simple web component",
   "main": "src/index.ts",
   "scripts": {
     "start": "webpack-dev-server --progress --open",
